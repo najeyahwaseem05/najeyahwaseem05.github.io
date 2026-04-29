@@ -1,160 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-    
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najeyah Waseem — CS Student & AI/Cybersecurity Enthusiast</title>
+    <meta name="description" content="B.Sc Computer Science student at Effat University. Exploring AI, Cybersecurity, and Software Development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+
     <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-content">
-        <a href="#" class="logo">Your Name</a>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">NW<span class="dot">.</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
+        <a href="Najeyah_Waseem_CV.pdf" target="_blank" class="btn-resume">Resume ↗</a>
+        <button class="mobile-menu-btn" id="mobileBtn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Hi, I’m <span class="highlight">Your Name</span></h1>
-        <p class="tagline">Computer Science Student | Aspiring Developer</p>
-        <p class="intro">
-          Welcome to my portfolio! I’m passionate about creating innovative
-          solutions.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="images/profile.jpg" alt="Your Name" />
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            Hello! I’m a Computer Science student at [ Your University ]. I’m
-            currently in my [ Year ] year, focusing on [ Your Interests ].
-          </p>
-          <p>
-            My journey in tech began when [ Your Story ]. Since then, I’ve
-            been constantly learning.
-          </p>
-        </div>
-        <div class="about-info">
-          <div class="info-item">
-            <i class="fas fa-graduation-cap"></i>
-            <span>BSc Computer Science</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Jeddah, Saudi Arabia</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <h2 class="section-title">My Skills</h2>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming Languages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">SQL</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <h2 class="section-title">My Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/project1.jpg" alt="Project 1" />
-          </div>
-          <div class="project-info">
-            <h3>Project Title 1</h3>
-            <p>A brief description of your project.</p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>Flask</span>
+    <!-- Hero -->
+    <section id="hero" class="hero-section">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-inner">
+            <div class="hero-tag">
+                <span class="pulse-dot"></span>
+                Available for opportunities
             </div>
-            <div class="project-links">
-              <a href="#"><i class="fab fa-github"></i> Code</a>
-              <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <h1 class="hero-title">
+                <span class="line-wrap"><span class="line-text">Hi, I'm</span></span>
+                <span class="line-wrap"><span class="line-text name-line">Najeyah<br>Waseem</span></span>
+            </h1>
+            <p class="hero-sub">
+                B.Sc Computer Science student at Effat University — passionate about <em>AI</em>, <em>Cybersecurity</em>, and building things that matter.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View Work <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="#contact" class="btn-ghost">Get in touch</a>
             </div>
-          </div>
+            <div class="hero-socials">
+                <a href="https://github.com/najeyahwaseem05" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013.01-.4c1.02.01 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:najeyah63@gmail.com" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+                </a>
+                <a href="tel:+966XXXXXXXXX" aria-label="Phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </a>
+            </div>
         </div>
-        <!-- Add more project cards as needed -->
-      </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-content">
-        <p>I’m currently looking for opportunities!</p>
-        <div class="contact-methods">
-          <a
-            href="mailto:your.email@example.com"
-            class="contact-item"
-          >
-            <i class="fas fa-envelope"></i>
-            <span>your.email@example.com</span>
-          </a>
-          <a
-            href="https://linkedin.com/in/yourprofile"
-            class="contact-item"
-          >
-            <i class="fab fa-linkedin"></i>
-            <span>LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/yourusername"
-            class="contact-item"
-          >
-            
+    <main>
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="section-label scroll-anim">01 — About</div>
+            <div class="about-grid">
+                <div class="about-text scroll-anim">
+                    <h2 class="section-heading">A builder, learner,<br><em>and problem solver.</em></h2>
+                    <p>I'm a Computer Science student at Effat University with a 3.99 GPA and a deep interest in how technology can be made more secure and more intelligent. I care about building things that work well and mean something.</p>
+                    <p>During my internship as an AI Red Teamer, I did adversarial testing on Urdu language models — hunting for vulnerabilities, improving robustness, and leading newer teammates through the process.</p>
+                    <p>Outside the lab, I serve as Student Representative for the College of Engineering, lead the Effat Foodies Club, sit on the Student Shura, and compete on the badminton team. I believe good engineers are well-rounded humans.</p>
+                    <a href="Najeyah_Waseem_CV.pdf" target="_blank" class="btn-primary mt-6">Download CV ↗</a>
+                </div>
+                <div class="about-details scroll-anim" style="transition-delay:0.2s">
+                    <div class="detail-card">
+                        <span class="detail-label">Name</span>
+                        <span class="detail-value">Najeyah Waseem</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Email</span>
+                        <span class="detail-value">najeyah63@gmail.com</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Location</span>
+                        <span class="detail-value">Jeddah, Saudi Arabia</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Degree</span>
+                        <span class="detail-value">B.Sc Computer Science</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">GPA</span>
+                        <span class="detail-value">3.99 / 4.00</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value available"><span class="pulse-dot sm"></span>Open to opportunities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section">
+            <div class="section-label scroll-anim">02 — Skills</div>
+            <h2 class="section-heading scroll-anim">Technologies I work with</h2>
+            <div class="skills-grid">
+                <div class="skill-card scroll-anim">
+                    <div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.05s">
+                    <div class="skill-top"><span class="skill-name">Java</span><span class="skill-pct">85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.1s">
+                    <div class="skill-top"><span class="skill-name">C++</span><span class="skill-pct">80%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.15s">
+                    <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-pct">85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.2s">
+                    <div class="skill-top"><span class="skill-name">MySQL</span><span class="skill-pct">90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.25s">
+                    <div class="skill-top"><span class="skill-name">HTML / CSS</span><span class="skill-pct">90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.3s">
+                    <div class="skill-top"><span class="skill-name">PHP</span><span class="skill-pct">70%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="70"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.35s">
+                    <div class="skill-top"><span class="skill-name">Machine Learning</span><span class="skill-pct">80%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.4s">
+                    <div class="skill-top"><span class="skill-name">Google Colab</span><span class="skill-pct">85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
+                </div>
+                <div class="skill-card scroll-anim" style="transition-delay:0.45s">
+                    <div class="skill-top"><span class="skill-name">LaTeX</span><span class="skill-pct">80%</span></div>
+                    <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
+                </div>
+            </div>
+            <div class="badges-row scroll-anim" style="transition-delay:0.5s">
+                <span class="badge-pill">AI & Red Teaming</span>
+                <span class="badge-pill">Data Structures</span>
+                <span class="badge-pill">Adversarial ML</span>
+                <span class="badge-pill">Research</span>
+                <span class="badge-pill">AWS</span>
+                <span class="badge-pill">Data Analysis</span>
+                <span class="badge-pill">OOP</span>
+                <span class="badge-pill">Version Control</span>
+            </div>
+        </section>
+
+        <!-- Projects Carousel -->
+        <section id="projects" class="section">
+            <div class="section-label scroll-anim">03 — Projects</div>
+            <div class="projects-header scroll-anim">
+                <h2 class="section-heading">Featured Work</h2>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Previous">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                    </button>
+                    <button class="carousel-btn" id="nextBtn" aria-label="Next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <article class="project-card">
+                        <div class="project-number">01</div>
+                        <div class="project-accent" style="background: linear-gradient(135deg, #05668d, #427aa1)"></div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Data Structures</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                            <h3 class="project-title">Hospital Management System</h3>
+                            <p class="project-desc">A C++ system leveraging queues, stacks, and priority queues to efficiently manage patient records, emergency triage, and treatment workflows with real-world data structure applications.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">02</div>
+                        <div class="project-accent" style="background: linear-gradient(135deg, #679436, #a5be00)"></div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Cybersecurity</span>
+                                <span class="tag">Research</span>
+                            </div>
+                            <h3 class="project-title">Detecting Data Poisoning in ML Models</h3>
+                            <p class="project-desc">Research project identifying and mitigating data poisoning attacks in ML systems. Comprehensive literature review analyzing existing attack strategies and defense mechanisms.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">View Research <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">03</div>
+                        <div class="project-accent" style="background: linear-gradient(135deg, #427aa1, #679436)"></div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">AI Testing</span>
+                                <span class="tag">AWS</span>
+                                <span class="tag">Red Teaming</span>
+                            </div>
+                            <h3 class="project-title">Amazon Nova AI Red Teaming</h3>
+                            <p class="project-desc">Led adversarial testing of Amazon's Nova AI model on AWS using targeted prompts to surface safety issues, while overseeing data labeling pipelines and quality review.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">04</div>
+                        <div class="project-accent" style="background: linear-gradient(135deg, #a5be00, #05668d)"></div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Healthcare AI</span>
+                                <span class="tag">Data Analysis</span>
+                            </div>
+                            <h3 class="project-title">Hospital Readmission Prediction</h3>
+                            <p class="project-desc">ML model predicting patient readmission likelihood from healthcare data. Involved feature engineering, model training, and evaluation to help clinical teams identify high-risk patients.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card project-placeholder">
+                        <div class="project-number">05</div>
+                        <div class="project-accent" style="background: linear-gradient(135deg, #c8d3d5, #e2e8ed)"></div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="tag tag-muted">Your Next Project</span>
+                            </div>
+                            <h3 class="project-title muted">Add Your Project Here</h3>
+                            <p class="project-desc muted">Replace this card with your next project. Include the name, a 2–3 sentence description of what you built and why, and the key technologies used. GitHub links or live demos are great additions.</p>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-link muted">Coming Soon</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <!-- Experience & Education — Horizontal Timeline -->
+        <section id="experience" class="section">
+            <div class="section-label scroll-anim">04 — Experience & Education</div>
+            <h2 class="section-heading scroll-anim">My Journey</h2>
+            <p class="timeline-note scroll-anim">← Most recent on the left</p>
+
+            <div class="htimeline-outer scroll-anim">
+                <div class="htimeline-scroll" id="htimelineScroll">
+                    <div class="htimeline-track">
+                        <div class="htimeline-item">
+                            <div class="htimeline-card">
+                                <span class="htimeline-badge work">Research</span>
+                                <h3>Data Poisoning in ML — Research</h3>
+                                <span class="htimeline-date">Ongoing</span>
+                                <p>Early-stage research identifying and mitigating data poisoning attacks in ML systems. Completed literature review of attack strategies and defenses.</p>
+                            </div>
+                            <div class="htimeline-connector"><div class="htimeline-dot"></div></div>
+                        </div>
+
+                        <div class="htimeline-item">
+                            <div class="htimeline-card">
+                                <span class="htimeline-badge work">Internship</span>
+                                <h3>Amazon Nova AI Red Teaming</h3>
+                                <span class="htimeline-date">Remote</span>
+                                <p>Led adversarial testing of Nova AI on AWS. Oversaw data labeling and quality review for the ML pipeline. Mentored newer team members.</p>
+                            </div>
+                            <div class="htimeline-connector"><div class="htimeline-dot"></div></div>
+                        </div>
+
+                        <div class="htimeline-item">
+                            <div class="htimeline-card">
+                                <span class="htimeline-badge edu">Education</span>
+                                <h3>B.Sc Computer Science</h3>
+                                <span class="htimeline-date">Effat University · Aug 2023 – Present</span>
+                                <p>3.99/4.00 CGPA. Dean's List 2023–24 and 2024–25. Engineering College Representative, Shura Council member, Foodies Club leader, Badminton team.</p>
+                            </div>
+                            <div class="htimeline-connector"><div class="htimeline-dot"></div></div>
+                        </div>
+
+                        <div class="htimeline-item">
+                            <div class="htimeline-card">
+                                <span class="htimeline-badge edu">Education</span>
+                                <h3>O & A Levels — High School Diploma</h3>
+                                <span class="htimeline-date">PISJ-ES, Jeddah · June 2022</span>
+                                <p>Completed with distinctions. Strong foundation in science, mathematics, and computer science. Prepared for STEM university studies.</p>
+                            </div>
+                            <div class="htimeline-connector"><div class="htimeline-dot"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section id="achievements" class="section">
+            <div class="section-label scroll-anim">05 — Achievements</div>
+            <h2 class="section-heading scroll-anim">Recognition</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card scroll-anim">
+                    <div class="ach-icon ach-orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <div class="ach-content">
+                        <div class="ach-label">Dean's List Award</div>
+                        <div class="ach-sub">2 Consecutive Years</div>
+                        <p>Recognized for academic excellence at Effat University, maintaining a CGPA of 3.99/4.00 across two academic years running.</p>
+                    </div>
+                </div>
+                <div class="achievement-card scroll-anim" style="transition-delay:0.15s">
+                    <div class="ach-icon ach-teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <div class="ach-content">
+                        <div class="ach-label">Online Hackathons</div>
+                        <div class="ach-sub">Active Participant</div>
+                        <p>Participated in multiple online hackathons, collaborating with teams to build rapid prototypes and innovative solutions under tight deadlines.</p>
+                    </div>
+                </div>
+                <div class="achievement-card scroll-anim" style="transition-delay:0.3s">
+                    <div class="ach-icon ach-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div class="ach-content">
+                        <div class="ach-label">Student Leadership</div>
+                        <div class="ach-sub">Multi-role Leader</div>
+                        <p>Serving simultaneously as Engineering College Representative, Shura Council member, Foodies Club leader, and badminton team member.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="contact-inner scroll-anim">
+                <div class="contact-tag">06 — Contact</div>
+                <h2 class="contact-heading">Let's build something<br><em>together.</em></h2>
+                <p class="contact-sub">Open to internships, research collaborations, and interesting projects. Feel free to reach out — I respond promptly.</p>
+                <div class="contact-cta">
+                    <a href="mailto:najeyah63@gmail.com" class="btn-primary">
+                        Say Hello <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://github.com/najeyahwaseem05" target="_blank" class="btn-ghost">GitHub ↗</a>
+                </div>
+                <div class="contact-email">najeyah63@gmail.com</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="nav-brand">NW<span class="dot">.</span></span>
+            <p>Designed & built by Najeyah Waseem · 2026</p>
+            <button class="footer-top" id="backToTop">Back to top ↑</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

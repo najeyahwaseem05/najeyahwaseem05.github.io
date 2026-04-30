@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let W, H, particles = [];
-    const PARTICLE_COUNT = 55;
+    const PARTICLE_COUNT = 150;
     const MOUSE = { x: -9999, y: -9999 };
     const REPEL_RADIUS = 120;
     const REPEL_STRENGTH = 3.5;

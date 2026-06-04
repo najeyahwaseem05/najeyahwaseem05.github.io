@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────
-     PROJECTS CAROUSEL
+     PROJECTS CAROUSEL — 3D Coverflow
   ───────────────────────────────────────── */
   const track    = document.getElementById('carouselTrack');
   const prevBtn  = document.getElementById('prevBtn');
@@ -192,9 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsWrap = document.getElementById('carouselDots');
 
   if (track && prevBtn && nextBtn && dotsWrap) {
-    const cards     = Array.from(track.querySelectorAll('.project-card'));
-    const cardWidth = () => cards[0].offsetWidth + 24; // gap = 24
-    let   currentIdx = 0;
+    const cards = Array.from(track.querySelectorAll('.project-card'));
+    let currentIdx = 0;
 
     // Build dots
     cards.forEach((_, i) => {
@@ -207,50 +206,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getDots() { return Array.from(dotsWrap.querySelectorAll('.carousel-dot')); }
 
+    const n = cards.length;
+    const wrap = idx => ((idx % n) + n) % n;
+
     function goTo(idx) {
-      currentIdx = Math.max(0, Math.min(idx, cards.length - 1));
-      track.style.transform = `translateX(-${currentIdx * cardWidth()}px)`;
+      currentIdx = wrap(idx);
+
+      cards.forEach((card, i) => {
+        card.classList.remove('coverflow-active','coverflow-prev-1','coverflow-prev-2','coverflow-next-1','coverflow-next-2','coverflow-hidden');
+
+        // Shortest circular offset
+        let offset = i - currentIdx;
+        if (offset > n / 2)  offset -= n;
+        if (offset < -n / 2) offset += n;
+
+        if      (offset === 0)  card.classList.add('coverflow-active');
+        else if (offset === -1) card.classList.add('coverflow-prev-1');
+        else if (offset === 1)  card.classList.add('coverflow-next-1');
+        else if (offset === -2) card.classList.add('coverflow-prev-2');
+        else if (offset === 2)  card.classList.add('coverflow-next-2');
+        else                    card.classList.add('coverflow-hidden');
+      });
+
       getDots().forEach((d, i) => d.classList.toggle('active', i === currentIdx));
-      prevBtn.disabled = currentIdx === 0;
-      nextBtn.disabled = currentIdx === cards.length - 1;
+      prevBtn.disabled = false;
+      nextBtn.disabled = false;
     }
 
     prevBtn.addEventListener('click', () => goTo(currentIdx - 1));
     nextBtn.addEventListener('click', () => goTo(currentIdx + 1));
 
+    // Click side cards to navigate
+    cards.forEach((card, i) => {
+      card.addEventListener('click', () => {
+        if (i !== currentIdx) goTo(i);
+      });
+    });
+
     // Initialize
     goTo(0);
 
-    // Recalculate on resize
-    window.addEventListener('resize', () => goTo(currentIdx));
-
     // Drag/swipe support
-    let startX = 0, isDragging = false, startTransform = 0;
+    let startX = 0, isDragging = false, dragDelta = 0;
 
     function dragStart(e) {
       isDragging = true;
+      dragDelta = 0;
       startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-      startTransform = currentIdx * cardWidth();
       track.classList.add('dragging');
-      e.preventDefault();
     }
     function dragMove(e) {
       if (!isDragging) return;
-      const x    = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-      const diff = startX - x;
-      track.style.transform = `translateX(-${startTransform + diff}px)`;
+      const x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      dragDelta = startX - x;
     }
     function dragEnd(e) {
       if (!isDragging) return;
       isDragging = false;
       track.classList.remove('dragging');
-      const x    = e.type === 'touchend' ? e.changedTouches[0].clientX : e.clientX;
-      const diff = startX - x;
-      if (Math.abs(diff) > 60) {
-        goTo(diff > 0 ? currentIdx + 1 : currentIdx - 1);
-      } else {
-        goTo(currentIdx); // snap back
+      if (Math.abs(dragDelta) > 50) {
+        goTo(dragDelta > 0 ? currentIdx + 1 : currentIdx - 1);
       }
+      dragDelta = 0;
     }
 
     track.addEventListener('mousedown',  dragStart);
@@ -260,6 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('touchstart', dragStart, { passive: false });
     track.addEventListener('touchmove',  dragMove,  { passive: true });
     track.addEventListener('touchend',   dragEnd);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      const projectsSection = document.getElementById('projects');
+      const rect = projectsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        if (e.key === 'ArrowLeft') goTo(currentIdx - 1);
+        if (e.key === 'ArrowRight') goTo(currentIdx + 1);
+      }
+    });
   }
 
 
@@ -292,6 +319,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+
+  /* ─────────────────────────────────────────
+     RESEARCH MODAL
+  ───────────────────────────────────────── */
+  const researchModal     = document.getElementById('researchModal');
+  const viewResearchBtn   = document.getElementById('viewResearchBtn');
+  const researchModalClose = document.getElementById('researchModalClose');
+
+  if (researchModal && viewResearchBtn) {
+    function openModal(e) {
+      e.preventDefault();
+      researchModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      researchModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    viewResearchBtn.addEventListener('click', openModal);
+    researchModalClose.addEventListener('click', closeModal);
+    researchModal.addEventListener('click', e => {
+      if (e.target === researchModal) closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && researchModal.classList.contains('open')) closeModal();
+    });
   }
 
 });

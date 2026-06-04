@@ -319,20 +319,20 @@
               <div class="project-number">01</div>
               <div
                 class="project-accent"
-                style="background: linear-gradient(135deg, #05668d, #427aa1)"
+                style="background: linear-gradient(135deg, #a5be00, #05668d)"
               ></div>
               <div class="project-body">
                 <div class="project-tags">
-                  <span class="tag">C++</span>
-                  <span class="tag">Data Structures</span>
-                  <span class="tag">Algorithms</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Healthcare AI</span>
+                  <span class="tag">Data Analysis</span>
                 </div>
-                <h3 class="project-title">Hospital Management System</h3>
+                <h3 class="project-title">Hospital Readmission Prediction</h3>
                 <p class="project-desc">
-                  A C++ system leveraging queues, stacks, and priority queues to
-                  efficiently manage patient records, emergency triage, and
-                  treatment workflows with real-world data structure
-                  applications.
+                  ML model predicting patient readmission likelihood from
+                  healthcare data. Involved feature engineering, model training,
+                  and evaluation to help clinical teams identify high-risk
+                  patients.
                 </p>
               </div>
               <div class="project-footer">
@@ -371,7 +371,7 @@
                 </p>
               </div>
               <div class="project-footer">
-                <a href="#" class="project-link"
+                <a href="#" class="project-link" id="viewResearchBtn"
                   >View Research
                   <svg
                     viewBox="0 0 24 24"
@@ -421,24 +421,24 @@
               <div class="project-number">04</div>
               <div
                 class="project-accent"
-                style="background: linear-gradient(135deg, #a5be00, #05668d)"
+                style="background: linear-gradient(135deg, #05668d, #427aa1)"
               ></div>
               <div class="project-body">
                 <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Healthcare AI</span>
-                  <span class="tag">Data Analysis</span>
+                  <span class="tag">C++</span>
+                  <span class="tag">Data Structures</span>
+                  <span class="tag">Algorithms</span>
                 </div>
-                <h3 class="project-title">Hospital Readmission Prediction</h3>
+                <h3 class="project-title">Hospital Management System</h3>
                 <p class="project-desc">
-                  ML model predicting patient readmission likelihood from
-                  healthcare data. Involved feature engineering, model training,
-                  and evaluation to help clinical teams identify high-risk
-                  patients.
+                  A C++ system leveraging queues, stacks, and priority queues to
+                  efficiently manage patient records, emergency triage, and
+                  treatment workflows with real-world data structure
+                  applications.
                 </p>
               </div>
               <div class="project-footer">
-                <a href="#" class="project-link"
+                <a href="https://github.com/saraimran-dev/Data-Structures-and-Algorithms-CS2011.git" class="project-link"
                   >View on GitHub
                   <svg
                     viewBox="0 0 24 24"
@@ -459,20 +459,18 @@
               ></div>
               <div class="project-body">
                 <div class="project-tags">
-                  <span class="tag tag-muted">Your Next Project</span>
+                  <span class="tag tag-muted">Coming Soon...</span>
                 </div>
-                <h3 class="project-title muted">Add Your Project Here</h3>
+                <h3 class="project-title muted">Project Title</h3>
                 <p class="project-desc muted">
-                  Replace this card with your next project. Include the name, a
-                  2–3 sentence description of what you built and why, and the
-                  key technologies used. GitHub links or live demos are great
-                  additions.
+                  New experiences to be conducted...
                 </p>
               </div>
               <div class="project-footer">
                 <span class="project-link muted">Coming Soon</span>
               </div>
             </article>
+
           </div>
         </div>
         <div class="carousel-dots" id="carouselDots"></div>
@@ -684,6 +682,52 @@
         <button class="footer-top" id="backToTop">Back to top ↑</button>
       </div>
     </footer>
+
+    <!-- Research Modal -->
+    <div class="research-modal-overlay" id="researchModal" role="dialog" aria-modal="true" aria-labelledby="researchModalTitle">
+      <div class="research-modal-card">
+        <button class="research-modal-close" id="researchModalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+
+        <!-- Animated beaker / lab scene -->
+        <div class="research-anim">
+          <div class="beaker">
+            <div class="beaker-neck"></div>
+            <div class="beaker-body">
+              <div class="liquid">
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+              </div>
+              <div class="steam s1"></div>
+              <div class="steam s2"></div>
+              <div class="steam s3"></div>
+            </div>
+          </div>
+          <div class="orbit-ring">
+            <div class="orbit-dot od1"></div>
+            <div class="orbit-dot od2"></div>
+            <div class="orbit-dot od3"></div>
+          </div>
+          <div class="sparkle sp1">✦</div>
+          <div class="sparkle sp2">✦</div>
+          <div class="sparkle sp3">✦</div>
+        </div>
+
+        <div class="research-modal-badge">Work in Progress</div>
+        <h3 id="researchModalTitle" class="research-modal-title">Research is Underway!</h3>
+        <p class="research-modal-text">
+          The data poisoning research is actively being conducted — literature reviewed,
+          models being tested, and findings being compiled. Check back soon!
+        </p>
+        <div class="research-modal-tags">
+          <span class="research-tag">Machine Learning</span>
+          <span class="research-tag">Cybersecurity</span>
+          <span class="research-tag">Research</span>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

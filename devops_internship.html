@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps Internship at ConfidencEway — Najeyah Waseem</title>
+  <meta name="description" content="Case study of a remote, mentor-led DevOps internship at ConfidencEway: 24 hands-on AWS, Docker and CI/CD tasks, each documented in a report." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#15130F" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="cursor-dot"></div><div class="reticle"><i></i><i></i><i></i><i></i></div><div class="glow"></div>
+
+  <nav class="nav" id="nav"><div class="wrap">
+    <a href="index.html" class="brand">najeyah<b>.</b>dev</a>
+    <a href="index.html#experience" class="back">← Back to portfolio</a>
+  </div></nav>
+
+  <header class="ihero"><canvas id="grid" aria-hidden="true"></canvas>
+    <div class="wrap" style="position:relative;z-index:1">
+      <span class="status"><i></i>Case study · ConfidencEway</span>
+      <h1>Learning DevOps by <em>building it on AWS</em></h1>
+      <p class="lead">A remote, mentor-led internship where I was assigned to a DevOps team and worked through real tasks, from a first EC2 server to serverless apps with CI/CD, documenting every one in a report.</p>
+      <div class="meta">
+        <div><span>organisation</span><b>ConfidencEway</b></div>
+        <div><span>format</span><b>Remote, mentor-led</b></div>
+        <div><span>scope</span><b>24 task reports · 60 internship days</b></div>
+        <div><span>focus</span><b>AWS · Docker · CI/CD</b></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="s" style="padding-top:60px"><div class="wrap">
+      <h2><small>the internship</small>Hands-on learning, one task at a time</h2>
+      <div class="story">
+        <p>I was placed with a DevOps team that sent me tasks, each building on the last. I worked on my own AWS environment, and for every task I wrote a report with screenshots of what I built, an explanation of the concepts in my own words, the problems I ran into, and questions for my mentor.</p>
+        <div class="quote">The reports were part of the work. Explaining why something works, and what went wrong on the way, taught me as much as getting it running.</div>
+        <p>By the end I had moved from launching a single server to running load-balanced containers, automated pipelines and serverless services, and had a habit of securing and monitoring each of them as I went.</p>
+      </div>
+    </div></section>
+
+    <section class="s" style="padding-top:20px"><div class="wrap">
+      <h2><small>the path</small>Six stages across 60 days</h2>
+      <div class="timeline"><div class="t-item"><div class="t-date">Days 1 – 5</div><h3>Cloud, Linux and the first server</h3><p>Started with cloud and Linux fundamentals, then explored the core AWS services (VPC, EC2, IAM, S3, Lambda, CloudWatch). Launched my first EC2 instance, locked SSH to my own IP, and served pages with Nginx, including a reverse proxy and simulated load balancing.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><span class="chip">AWS EC2</span><span class="chip">IAM</span><span class="chip">Security groups</span><span class="chip">SSH</span><span class="chip">Nginx</span></div></div><div class="t-item"><div class="t-date">Days 6 – 10</div><h3>From a small app to containers</h3><p>Built a Node.js and Express backend, ran several instances behind Nginx with weighted load balancing, and added health checks that routed around a killed instance. Then packaged the app in Docker and ran Nginx plus multiple app containers from one Docker Compose file.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Nginx upstream</span></div></div><div class="t-item"><div class="t-date">Days 12 – 21</div><h3>Hardening, automation and monitoring</h3><p>Created individual SSH-key users, disabled root login and locked the default account. Wrote a bash script scheduled with cron and log rotation, then installed the CloudWatch agent to track memory and disk usage and raise an email alarm. Also wrote a client-facing one-pager on WhatsApp Official Business Accounts.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><span class="chip">Linux users</span><span class="chip">SSH keys</span><span class="chip">sudoers</span><span class="chip">Bash</span><span class="chip">cron</span><span class="chip">CloudWatch agent</span><span class="chip">SNS alarms</span></div></div><div class="t-item"><div class="t-date">Days 25 – 32</div><h3>Git and my first pipeline</h3><p>Learned Git and GitHub properly: commits, branches, pull requests and merging. Built a GitHub Actions workflow that tests the app on every push, then added a deploy job that ships to EC2 using GitHub Secrets. Compared Bitwarden and LastPass for a team in a written report.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span><span class="chip">Secrets</span></div></div><div class="t-item"><div class="t-date">Days 42 – 45</div><h3>Load balancing, image hardening and serverless</h3><p>Ran the app on two EC2 instances behind an Application Load Balancer, then stopped one container to watch it fail over and recover. Researched protecting source code in a Docker image and built a signed, instance-bound licence check. Created my first Lambda functions behind API Gateway.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><span class="chip">ALB</span><span class="chip">Target groups</span><span class="chip">Multi-stage builds</span><span class="chip">Lambda</span><span class="chip">API Gateway</span></div></div><div class="t-item"><div class="t-date">Days 50 – 60</div><h3>Observability, serverless apps and cost</h3><p>Built a CloudWatch Synthetics canary with an alarm, then a serverless URL shortener on Lambda, API Gateway and DynamoDB. Rebuilt it with an OIDC-based GitHub Actions pipeline that can update one Lambda function and nothing else. In the final task I reviewed an AWS account’s billing and wrote a cost-optimization plan.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px"><span class="chip">CloudWatch Synthetics</span><span class="chip">DynamoDB</span><span class="chip">OIDC</span><span class="chip">Least privilege</span><span class="chip">Cost Explorer</span></div></div></div>
+    </div></section>
+
+    <section class="s" style="padding-top:20px"><div class="wrap">
+      <h2><small>highlights</small>Three things I’m proud of</h2>
+      <div class="roles">
+        <div class="card spot tilt"><h3>Load-balanced containers</h3><p>The same Dockerised Express and Nginx app ran on two EC2 instances behind an Application Load Balancer. When I stopped one container, the balancer marked it unhealthy, sent all traffic to the other, and resumed sharing once it recovered.</p><div class="stack"><span>EC2</span><span>ALB</span><span>Docker Compose</span></div></div>
+        <div class="card spot tilt"><h3>Least-privilege deployments</h3><p>A GitHub Actions pipeline deploys a Lambda function using short-lived credentials from OIDC, with a role allowed to do exactly one thing. When it first failed, I traced it to the repository subject format in the trust policy and fixed it.</p><div class="stack"><span>OIDC</span><span>IAM</span><span>GitHub Actions</span></div></div>
+        <div class="card spot tilt"><h3>Serverless URL shortener</h3><p>A POST route creates a short code stored in DynamoDB, and a GET route looks it up and redirects. I built it twice, the second time with a proper repository and an automated deployment.</p><div class="stack"><span>Lambda</span><span>API Gateway</span><span>DynamoDB</span></div></div>
+      </div>
+    </div></section>
+
+    <section class="s" style="padding-top:20px"><div class="wrap">
+      <h2><small>screenshots</small>From the reports</h2>
+      <div class="shots">
+        <button class="shot spot tilt"><img src="devops_github_actions.jpg" style="object-fit:contain;background:#0d0c09" alt="GitHub Actions run showing the deploy job succeeding, including the step that configures AWS credentials using OIDC" /><div><b>OIDC deployment pipeline</b><span>A successful GitHub Actions run deploying a Lambda function</span></div></button>
+        <button class="shot spot tilt"><img src="devops_cloudwatch_config.jpg" style="object-fit:contain;background:#0d0c09" alt="CloudWatch agent JSON configuration collecting disk and memory usage" /><div><b>CloudWatch agent configuration</b><span>Collecting memory and disk usage from an EC2 instance</span></div></button>
+        <button class="shot spot tilt" style="grid-column:1/-1"><img src="devops_cloudwatch_metrics.jpg" alt="CloudWatch graph of disk and memory usage percentage" style="aspect-ratio:auto" /><div><b>Disk and memory metrics</b><span>The custom metrics appearing in the CloudWatch console, used to drive an alarm</span></div></button>
+      </div>
+    </div></section>
+
+    <section class="s" style="padding-top:20px"><div class="wrap">
+      <h2><small>toolbox</small>What I used</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="chip">AWS EC2</span><span class="chip">IAM</span><span class="chip">VPC &amp; security groups</span><span class="chip">Application Load Balancer</span><span class="chip">Lambda</span><span class="chip">API Gateway</span><span class="chip">DynamoDB</span><span class="chip">CloudWatch &amp; Synthetics</span><span class="chip">SNS</span>
+        <span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Nginx</span><span class="chip">Node.js &amp; Express</span><span class="chip">Linux &amp; Bash</span><span class="chip">cron</span>
+        <span class="chip">Git &amp; GitHub</span><span class="chip">GitHub Actions</span><span class="chip">OIDC</span>
+      </div>
+    </div></section>
+
+    <section class="s" style="padding-top:20px"><div class="wrap">
+      <h2><small>certificate</small>Certificate of Internship</h2>
+      <div class="shots" style="grid-template-columns:minmax(0,640px);justify-content:center">
+        <button class="shot spot tilt"><img src="certificate_confidenceway.jpg" alt="ConfidencEway Certificate of Internship for the Summer Internship Program 2026" style="object-fit:contain;background:#2a1c3d" /><div><b>Certificate of Internship</b><span>ConfidencEway Summer Internship Program 2026</span></div></button>
+      </div>
+    </div></section>
+
+    <section class="s" style="padding-top:20px"><div class="wrap">
+      <h2><small>takeaways</small>What I took away</h2>
+      <div class="two">
+        <div class="panel spot tilt"><h3>Troubleshooting is the job</h3><p>A full disk, a port already in use, a typo in a Compose file, a trust policy in the wrong format. Reading the error and narrowing it down was a bigger skill than knowing the commands.</p></div>
+        <div class="panel spot tilt"><h3>Least privilege everywhere</h3><p>Individual users instead of shared logins, SSH keys, scoped IAM roles and short-lived credentials. Security came up in almost every task.</p></div>
+        <div class="panel spot tilt"><h3>Know what can’t be done</h3><p>While researching how to protect source code in a Docker image, I found that a privileged host admin can always export it. The honest answer was to harden it, gate it with licences and say so clearly.</p></div>
+        <div class="panel spot tilt"><h3>Write it down, ask questions</h3><p>Explaining each task in a report and ending with open questions turned every task into a conversation with my mentor, and made me understand it properly.</p></div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap"><span>ConfidencEway DevOps internship · 2026</span><a class="back" href="index.html#experience">← Back to portfolio</a></div></footer>
+
+  <div class="lightbox" id="lightbox"><button aria-label="Close">×</button><img src="" alt="" /></div>
+</body>
+</html>

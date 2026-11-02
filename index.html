@@ -1,734 +1,257 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Najeyah Waseem — CS Student & AI/Cybersecurity Enthusiast</title>
-    <meta
-      name="description"
-      content="B.Sc Computer Science student at Effat University. Exploring AI, Cybersecurity, and Software Development."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-brand">NW<span class="dot">.</span></div>
-      <ul class="nav-links" id="navLinks">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Najeyah Waseem — Computer Science Student, Cybersecurity &amp; AI</title>
+  <meta name="description" content="Computer Science student at Effat University (general track: cybersecurity and AI) working on security, AI/ML and DevOps. Seeking a CS internship." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#15130F" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="cursor-dot"></div><div class="reticle"><i></i><i></i><i></i><i></i></div><div class="glow"></div>
+
+  <nav class="nav" id="nav">
+    <div class="wrap">
+      <a href="#top" class="brand">najeyah<b>.</b>dev</a>
+      <ul class="links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#leadership">Leadership</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="Najeyah_Waseem_CV.pdf" target="_blank" class="btn-resume"
-        >Resume ↗</a
-      >
-      <button class="mobile-menu-btn" id="mobileBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+      <button class="btn sm" data-cv>Resume</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </nav>
 
-    <!-- Hero -->
-    <section id="hero" class="hero-section">
-      <canvas id="particleCanvas"></canvas>
-      <div class="hero-inner">
-        <div class="hero-tag">
-          <span class="pulse-dot"></span>
-          Available for opportunities
+  <header class="hero" id="top">
+    <canvas id="grid" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="status"><i></i>Seeking a Computer Science internship</div>
+        <h1>Najeyah Waseem</h1>
+        <p class="typed-line"><span class="prompt">&gt;</span>I work on <span id="typer">web application security</span><span class="caret"></span></p>
+        <p class="lead">Computer Science student at Effat University on the general track, covering cybersecurity and AI. I test systems, build secure infrastructure, and train machine learning models that hold up under attack.</p>
+        <div class="cta">
+          <a href="#projects" class="btn solid">See my work</a>
+          <button class="btn ghost" data-cv>View CV</button>
         </div>
-        <h1 class="hero-title">
-          <span class="line-wrap"><span class="line-text">Hi, I'm</span></span>
-          <span class="line-wrap"
-            ><span class="line-text name-line">Najeyah<br />Waseem</span></span
-          >
-        </h1>
-        <p class="hero-sub">
-          B.Sc Computer Science student at Effat University — passionate about
-          <em>AI</em>, <em>Cybersecurity</em>, and building things that matter.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn-primary"
-            >View Work
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" /></svg
-          ></a>
-          <a href="#contact" class="btn-ghost">Get in touch</a>
+        <div class="socials"><a href="https://github.com/najeyahwaseem05" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013.01-.4c1.02.01 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="https://www.linkedin.com/in/najeyah-waseem-cs" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="mailto:najeyah63@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></a></div>
+      </div>
+      <dl class="spec">
+        <div><dt>latest</dt><dd>DevOps Engineer Intern<small>ConfidencEway, remote · completed</small></dd></div>        <div><dt>building</dt><dd>Temporal digital twin for incident reconstruction<small>Senior capstone</small></dd></div>
+        <div><dt>studying</dt><dd>B.Sc. Computer Science, GPA 3.99<small>Effat University, graduating June 2027</small></dd></div>
+        <div><dt>based in</dt><dd>Jeddah, Saudi Arabia</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <main>
+    <section class="s" id="about"><div class="wrap">
+      <h2><small>about</small>Security-minded, with a habit of shipping.</h2>
+      <div class="about">
+        <div>
+          <p>I’m a Computer Science student at Effat University with a 3.99 GPA on the general track, which blends cybersecurity and AI. I’m building a foundation in programming, algorithm analysis and software development, and applying it to security and AI projects.</p>
+          <p>This year I completed a DevOps internship, and I’m now designing a temporal digital twin of a banking environment for my senior capstone, and doing web application penetration testing. Earlier, I red-teamed an AI language model using Urdu prompts, moving from labeler to reviewer to team recruiter.</p>
+          <p>I also lead on campus: I’m Student Government Vice President, and I’ve served as College of Engineering Representative and Foodie’s Club leader. I’m comfortable managing several projects and people at once.</p>
+          <div class="course-list">
+            <span class="chip">Ethical Hacking</span><span class="chip">Cryptography &amp; Network Security</span><span class="chip">Digital Forensics</span><span class="chip">Governance, Risk &amp; Compliance</span><span class="chip">Computer Networks</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Software Engineering</span><span class="chip">Artificial Intelligence</span>
+          </div>
         </div>
-        <div class="hero-socials">
-          <a
-            href="https://github.com/najeyahwaseem05"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013.01-.4c1.02.01 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"
-              />
-            </svg>
-          </a>
-          <a href="mailto:najeyah63@gmail.com" aria-label="Email">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 7-10 7L2 7" />
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/najeyah-waseem-8b9aa1274"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846 13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711 19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433A2.062 2.062 0 013.274 5.368 2.062 2.062 0 015.337 3.305 2.062 2.062 0 017.4 5.368 2.062 2.062 0 015.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452Z"
-              />
-            </svg>
-          </a>
+        <dl class="facts">
+          <div><dt>degree</dt><dd>B.Sc. Computer Science, General Track (Cybersecurity + AI)</dd></div>
+          <div><dt>university</dt><dd>Effat University</dd></div>
+          <div><dt>graduating</dt><dd>June 2027</dd></div>
+          <div><dt>gpa</dt><dd>3.99 / 4.00</dd></div>
+          <div><dt>honors</dt><dd>President’s List 2025/26<br/>Dean’s List 2023–2025</dd></div>
+          <div><dt>location</dt><dd>Jeddah, Saudi Arabia</dd></div>
+        </dl>
+      </div>
+    </div></section>
+
+    <section class="s" id="skills"><div class="wrap">
+      <h2><small>skills</small>What I work with</h2>
+      <div class="skills">
+        <div class="skill-group spot tilt" style="--c:var(--green)"><h3>Security</h3><div class="chips"><span class="chip">Web app penetration testing</span><span class="chip">SQL injection</span><span class="chip">XSS</span><span class="chip">PCAP analysis</span><span class="chip">IDS tools</span><span class="chip">Adversarial ML</span><span class="chip">Data poisoning</span></div></div>
+        <div class="skill-group spot tilt" style="--c:var(--moss)"><h3>AI &amp; Data</h3><div class="chips"><span class="chip">Machine learning</span><span class="chip">XGBoost</span><span class="chip">SMOTE</span><span class="chip">Data preprocessing &amp; analysis</span><span class="chip">Google Colab</span></div></div>
+        <div class="skill-group spot tilt" style="--c:var(--amber)"><h3>Cloud &amp; DevOps</h3><div class="chips"><span class="chip">AWS (EC2, IAM, CloudWatch)</span><span class="chip">Docker</span><span class="chip">Security groups</span><span class="chip">Monitoring &amp; alerting</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD security</span></div></div>
+        <div class="skill-group spot tilt" style="--c:var(--teal)"><h3>Networking &amp; Systems</h3><div class="chips"><span class="chip">TCP/IP</span><span class="chip">Network segmentation</span><span class="chip">Wireshark</span><span class="chip">Kali Linux</span><span class="chip">VirtualBox</span></div></div>
+        <div class="skill-group spot tilt" style="--c:var(--green);grid-column:1/-1"><h3>Programming languages</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">HTML</span><span class="chip">MySQL</span><span class="chip">Assembly</span><span class="chip">Bash</span></div></div>
+      </div>
+    </div></section>
+
+    <section class="s" id="projects"><div class="wrap">
+      <h2><small>projects</small>Things I’ve built and tested</h2>
+      <p class="hint">Select a project to open it.</p>
+      <div class="projects" id="projects-grid">
+        <article class="card spot tilt featured">
+          <div class="top"><span class="tag live">In progress</span><span class="date">Senior capstone · Sept 2026 – present</span></div>
+          <h3>Temporal Digital Twin for Incident Reconstruction in Hybrid-Cloud Banking</h3>
+          <div class="body">
+            <p>A digital twin of a simulated banking environment that keeps historical network, identity, permission and policy states, and can show the environment exactly as it was at any chosen timestamp.</p>
+            <ul><li>Correlates security events with past system states to rebuild multi-stage attack timelines.</li><li>Analyses attack paths to show what routes an attacker could have used.</li></ul>
+            <div class="stack"><span>Python</span><span>PostgreSQL</span><span>Neo4j</span><span>Docker</span><span>Wazuh</span></div>
+          </div>
+        </article>
+        <article class="card spot tilt">
+          <div class="top"><span class="tag">Security lab</span><span class="date">May 2026</span></div>
+          <h3>Web Application Penetration Testing</h3>
+          <div class="body">
+            <p>Tested isolated vulnerable apps for SQL injection and XSS, from authentication bypass and database enumeration to reflected and stored XSS, using manual and SQLMap methods.</p>
+            <ul><li>Recommended prepared statements, output encoding and CSP.</li></ul>
+            <div class="stack"><span>Kali Linux</span><span>Docker</span><span>WebSploit Labs</span><span>SQLMap</span></div>
+          </div>
+        </article>
+        <article class="card spot tilt">
+          <div class="top"><span class="tag">Machine learning</span><span class="date">CS4082 · team of 4</span></div>
+          <h3>Hospital Readmission Prediction</h3>
+          <div class="body">
+            <p>Built and compared six models on 71,515 patient encounters from the 130-US-hospitals diabetes dataset, handling class imbalance with SMOTE and threshold tuning.</p>
+            <ul><li>Tuned XGBoost performed best: 0.58 recall, 0.72 AUC-ROC.</li><li>Five phases, from literature review to interpretability.</li></ul>
+            <div class="stack"><span>Python</span><span>XGBoost</span><span>SMOTE</span><span>Jupyter</span></div>
+            <div class="more"><a class="gh" href="https://github.com/najeyahwaseem05/CS4082_Machine_Learning_Project" target="_blank" rel="noopener" aria-label="GitHub repository"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013.01-.4c1.02.01 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a></div>
+          </div>
+        </article>
+        <article class="card spot tilt">
+          <div class="top"><span class="tag">AI safety</span><span class="date">Jun – Jul 2026</span></div>
+          <h3>AI Red Teaming in Urdu</h3>
+          <div class="body">
+            <p>Safety-tested an AI language model with adversarial Urdu prompts, escalating strategies when the model held. Promoted from labeler to reviewer, and recruited new labelers.</p>
+            <div class="stack"><span>AWS</span><span>Adversarial prompting</span><span>Data QA</span></div>
+            <div class="more"><a href="astrolabe_internship.html">Read the case study →</a></div>
+          </div>
+        </article>
+        <article class="card spot tilt">
+          <div class="top"><span class="tag">Data structures</span><span class="date">CS2011 · team project</span></div>
+          <h3>Hospital Patient Record Management</h3>
+          <div class="body">
+            <p>A C++ console system that manages patient records with a linked list, an emergency room queue, and a treatment-history stack with undo.</p>
+            <ul><li>Add, search, update and delete patient records.</li></ul>
+            <div class="stack"><span>C++</span><span>Linked list</span><span>Queue</span><span>Stack</span></div>
+            <div class="more"><a class="gh" href="https://github.com/saraimran-dev/Data-Structures-and-Algorithms-CS2011" target="_blank" rel="noopener" aria-label="GitHub repository"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013.01-.4c1.02.01 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a></div>
+          </div>
+        </article>
+        <article class="card spot tilt">
+          <div class="top"><span class="tag live">Research</span><span class="date">Ongoing</span></div>
+          <h3>Detecting Data Poisoning in ML Models</h3>
+          <div class="body">
+            <p>Early-stage research on how data poisoning attacks work and how to defend against them. The literature review of attack strategies and defenses is complete.</p>
+            <div class="stack"><span>Adversarial ML</span><span>Research</span></div>
+          </div>
+        </article>
+      </div>
+    </div></section>
+
+    <section class="s" id="experience"><div class="wrap">
+      <h2><small>experience &amp; education</small>My path so far</h2>
+      <div class="timeline">
+        <div class="t-item" style="--c:var(--amber)"><div class="t-date">July 2026 – Sept 2026</div><h3>DevOps Engineer Intern</h3><div class="org">ConfidencEway · Remote</div><p>Worked through 24 hands-on tasks with a DevOps team, from EC2, Docker and Nginx to CI/CD pipelines, monitoring and serverless apps on AWS, documenting each in a report.</p><a class="inline" href="devops_internship.html">Read the case study →</a></div>        <div class="t-item" style="--c:var(--amber)"><div class="t-date">Jun 2026 – Jul 2026</div><h3>AI Red Teamer: Manager, Reviewer, Labeler</h3><div class="org">AI Astrolabe · Remote</div><p>Labeled and reviewed dangerous Urdu prompts and responses to safety-test an AI language model.</p><a class="inline" href="astrolabe_internship.html">Read the case study →</a></div>
+        <div class="t-item" style="--c:var(--moss)"><div class="t-date">Aug 2023 – June 2027</div><h3>B.Sc. Computer Science, General Track (Cybersecurity + AI)</h3><div class="org">Effat University · Jeddah</div><p>GPA 3.99 / 4.00. President’s List 2025/26 and Dean’s List 2023–2025.</p></div>
+        <div class="t-item" style="--c:var(--moss)"><div class="t-date">June 2022</div><h3>O &amp; A Levels, High School Diploma</h3><div class="org">PISJ-ES · Jeddah</div><p>Strong foundation in science, mathematics and computer science.</p></div>
+      </div>
+    </div></section>
+
+    <section class="s" id="leadership"><div class="wrap">
+      <h2><small>leadership &amp; recognition</small>Beyond the code</h2>
+      <div class="two">
+        <div class="panel spot tilt">
+          <h3>Leadership</h3>
+          <ul class="rows">
+            <li><em>2026 – now</em><strong>Student Government Vice President</strong><span>Effat University. Represent the student body with administration and plan campus initiatives and events.</span></li>
+            <li><em>2025 – 26</em><strong>Nominee, Student Shura Council President</strong><span>Effat University. Nominated for the Queen Effat Citizenship Award.</span></li>
+            <li><em>2024 – 26</em><strong>College of Engineering Rep &amp; Foodie’s Club Leader</strong><span>Presented student concerns in Shura, and planned and ran club events.</span></li>
+          </ul>
+        </div>
+        <div class="panel spot tilt">
+          <h3>Honors &amp; certifications</h3>
+          <ul class="rows">
+            <li><em>2025/26</em><strong>President’s List</strong><span>GPA of 3.9 or higher across two consecutive semesters.</span></li>
+            <li><em>2023–25</em><strong>Dean’s List</strong><span>GPA of 3.75 or higher across two consecutive semesters.</span></li>
+            <li><em>2027</em><strong>CompTIA Security+</strong><span>In progress, targeting January 2027.</span></li>
+            <li><em>2026</em><strong>Python for Data Science, AI &amp; Development</strong><span>IBM</span></li>
+            <li><em>2026</em><strong>Introduction to Generative AI</strong><span>Google Cloud</span></li>
+            <li><em>2025</em><strong>Digital Safety and Security</strong><span>Arizona State University</span></li>
+          </ul>
         </div>
       </div>
-      <div class="hero-scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+    </div></section>
+
+    <section class="s" id="contact"><div class="wrap">
+      <div class="contact spot">
+        <h2><small>contact</small>Looking for a CS intern? Let’s talk.</h2>
+        <p>I’m open to internships, research collaborations and security or AI projects. Email is the fastest way to reach me.</p>
+        <div class="cta" style="margin:0">
+          <a href="mailto:najeyah63@gmail.com" class="btn solid">Email me</a>
+          <button class="btn ghost" data-cv>View CV</button>
+          <a href="https://www.linkedin.com/in/najeyah-waseem-cs" target="_blank" rel="noopener" class="btn ghost">LinkedIn</a>
+        </div>
+        <div class="mail">najeyah63@gmail.com</div>
       </div>
-    </section>
+    </div></section>
+  </main>
 
-    <main>
-      <!-- About -->
-      <section id="about" class="section">
-        <div class="section-label scroll-anim">01 — About</div>
-        <div class="about-grid">
-          <div class="about-text scroll-anim">
-            <h2 class="section-heading">
-              A builder, learner,<br /><em>and problem solver.</em>
-            </h2>
-            <p>
-              I'm a Computer Science student at Effat University with a 3.99 GPA
-              and a deep interest in how technology can be made more secure and
-              more intelligent. I care about building things that work well and
-              mean something.
-            </p>
-            <p>
-              During my internship as an AI Red Teamer, I did adversarial
-              testing on Urdu language models — hunting for vulnerabilities,
-              improving robustness, and leading newer teammates through the
-              process.
-            </p>
-            <p>
-              Outside the lab, I serve as Student Representative for the College
-              of Engineering, lead the Effat Foodies Club, sit on the Student
-              Shura, and compete on the badminton team. I believe good engineers
-              are well-rounded humans.
-            </p>
-            <a
-              href="Najeyah_Waseem_CV.pdf"
-              target="_blank"
-              class="btn-primary mt-6"
-              >Download CV ↗</a
-            >
-          </div>
-          <div class="about-details scroll-anim" style="transition-delay: 0.2s">
-            <div class="detail-card">
-              <span class="detail-label">Name</span>
-              <span class="detail-value">Najeyah Waseem</span>
-            </div>
-            <div class="detail-card">
-              <span class="detail-label">Email</span>
-              <span class="detail-value">najeyah63@gmail.com</span>
-            </div>
-            <div class="detail-card">
-              <span class="detail-label">Location</span>
-              <span class="detail-value">Jeddah, Saudi Arabia</span>
-            </div>
-            <div class="detail-card">
-              <span class="detail-label">Degree</span>
-              <span class="detail-value">B.Sc Computer Science</span>
-            </div>
-            <div class="detail-card">
-              <span class="detail-label">GPA</span>
-              <span class="detail-value">3.99 / 4.00</span>
-            </div>
-            <div class="detail-card">
-              <span class="detail-label">Status</span>
-              <span class="detail-value available"
-                ><span class="pulse-dot sm"></span>Open to opportunities</span
-              >
-            </div>
-          </div>
+  <footer><div class="wrap"><span class="brand">najeyah<b>.</b>dev</span><span>Designed and built by Najeyah Waseem, 2026</span><button id="toTop">Back to top ↑</button></div></footer>
+
+  <div class="cv-overlay" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvTitle" aria-hidden="true">
+    <div class="cv-sheet">
+      <div class="cv-bar">
+        <span class="mono" id="cvTitle">Najeyah_Waseem_CV</span>
+        <div class="cv-actions">
+          <a class="btn solid" href="Najeyah_Waseem_CV_Updated.pdf" download>Download PDF</a>
+          <button class="cv-close" id="cvClose" aria-label="Close CV">×</button>
         </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills" class="section">
-        <div class="section-label scroll-anim">02 — Skills</div>
-        <h2 class="section-heading scroll-anim">Technologies I work with</h2>
-        <div class="skills-grid">
-          <div class="skill-card scroll-anim">
-            <div class="skill-top">
-              <span class="skill-name">Python</span
-              ><span class="skill-pct">90%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.05s">
-            <div class="skill-top">
-              <span class="skill-name">Java</span
-              ><span class="skill-pct">85%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="85"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.1s">
-            <div class="skill-top">
-              <span class="skill-name">C++</span
-              ><span class="skill-pct">80%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.15s">
-            <div class="skill-top">
-              <span class="skill-name">JavaScript</span
-              ><span class="skill-pct">85%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="85"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.2s">
-            <div class="skill-top">
-              <span class="skill-name">MySQL</span
-              ><span class="skill-pct">90%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.25s">
-            <div class="skill-top">
-              <span class="skill-name">HTML / CSS</span
-              ><span class="skill-pct">90%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.3s">
-            <div class="skill-top">
-              <span class="skill-name">PHP</span
-              ><span class="skill-pct">70%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="70"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.35s">
-            <div class="skill-top">
-              <span class="skill-name">Machine Learning</span
-              ><span class="skill-pct">80%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.4s">
-            <div class="skill-top">
-              <span class="skill-name">Google Colab</span
-              ><span class="skill-pct">85%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="85"></div>
-            </div>
-          </div>
-          <div class="skill-card scroll-anim" style="transition-delay: 0.45s">
-            <div class="skill-top">
-              <span class="skill-name">LaTeX</span
-              ><span class="skill-pct">80%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80"></div>
-            </div>
-          </div>
-        </div>
-        <div class="badges-row scroll-anim" style="transition-delay: 0.5s">
-          <span class="badge-pill">AI & Red Teaming</span>
-          <span class="badge-pill">Data Structures</span>
-          <span class="badge-pill">Adversarial ML</span>
-          <span class="badge-pill">Research</span>
-          <span class="badge-pill">AWS</span>
-          <span class="badge-pill">Data Analysis</span>
-          <span class="badge-pill">OOP</span>
-          <span class="badge-pill">Version Control</span>
-        </div>
-      </section>
-
-      <!-- Projects Carousel -->
-      <section id="projects" class="section">
-        <div class="section-label scroll-anim">03 — Projects</div>
-        <div class="projects-header scroll-anim">
-          <h2 class="section-heading">Featured Work</h2>
-          <div class="carousel-controls">
-            <button class="carousel-btn" id="prevBtn" aria-label="Previous">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-              >
-                <path d="M19 12H5M12 5l-7 7 7 7" />
-              </svg>
-            </button>
-            <button class="carousel-btn" id="nextBtn" aria-label="Next">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="carousel-wrapper">
-          <div class="carousel-track" id="carouselTrack">
-            <article class="project-card">
-              <div class="project-number">01</div>
-              <div
-                class="project-accent"
-                style="background: linear-gradient(135deg, #a5be00, #05668d)"
-              ></div>
-              <div class="project-body">
-                <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Healthcare AI</span>
-                  <span class="tag">Data Analysis</span>
-                </div>
-                <h3 class="project-title">Hospital Readmission Prediction</h3>
-                <p class="project-desc">
-                  ML model predicting patient readmission likelihood from
-                  healthcare data. Involved feature engineering, model training,
-                  and evaluation to help clinical teams identify high-risk
-                  patients.
-                </p>
-              </div>
-              <div class="project-footer">
-                <a href="#" class="project-link"
-                  >View on GitHub
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7v10" /></svg
-                ></a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-number">02</div>
-              <div
-                class="project-accent"
-                style="background: linear-gradient(135deg, #679436, #a5be00)"
-              ></div>
-              <div class="project-body">
-                <div class="project-tags">
-                  <span class="tag">Machine Learning</span>
-                  <span class="tag">Cybersecurity</span>
-                  <span class="tag">Research</span>
-                </div>
-                <h3 class="project-title">
-                  Detecting Data Poisoning in ML Models
-                </h3>
-                <p class="project-desc">
-                  Research project identifying and mitigating data poisoning
-                  attacks in ML systems. Comprehensive literature review
-                  analyzing existing attack strategies and defense mechanisms.
-                </p>
-              </div>
-              <div class="project-footer">
-                <a href="#" class="project-link" id="viewResearchBtn"
-                  >View Research
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7v10" /></svg
-                ></a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-number">03</div>
-              <div
-                class="project-accent"
-                style="background: linear-gradient(135deg, #427aa1, #679436)"
-              ></div>
-              <div class="project-body">
-                <div class="project-tags">
-                  <span class="tag">AI Testing</span>
-                  <span class="tag">AWS</span>
-                  <span class="tag">Red Teaming</span>
-                </div>
-                <h3 class="project-title">Amazon Nova AI Red Teaming</h3>
-                <p class="project-desc">
-                  Led adversarial testing of Amazon's Nova AI model on AWS using
-                  targeted prompts to surface safety issues, while overseeing
-                  data labeling pipelines and quality review.
-                </p>
-              </div>
-              <div class="project-footer">
-                <a href="astrolabe_internship.html" class="project-link"
-                  >View Details
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7v10" /></svg
-                ></a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-number">04</div>
-              <div
-                class="project-accent"
-                style="background: linear-gradient(135deg, #05668d, #427aa1)"
-              ></div>
-              <div class="project-body">
-                <div class="project-tags">
-                  <span class="tag">C++</span>
-                  <span class="tag">Data Structures</span>
-                  <span class="tag">Algorithms</span>
-                </div>
-                <h3 class="project-title">Hospital Management System</h3>
-                <p class="project-desc">
-                  A C++ system leveraging queues, stacks, and priority queues to
-                  efficiently manage patient records, emergency triage, and
-                  treatment workflows with real-world data structure
-                  applications.
-                </p>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/saraimran-dev/Data-Structures-and-Algorithms-CS2011.git" class="project-link"
-                  >View on GitHub
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7v10" /></svg
-                ></a>
-              </div>
-            </article>
-
-            <article class="project-card project-placeholder">
-              <div class="project-number">05</div>
-              <div
-                class="project-accent"
-                style="background: linear-gradient(135deg, #c8d3d5, #e2e8ed)"
-              ></div>
-              <div class="project-body">
-                <div class="project-tags">
-                  <span class="tag tag-muted">Coming Soon...</span>
-                </div>
-                <h3 class="project-title muted">Project Title</h3>
-                <p class="project-desc muted">
-                  New experiences to be conducted...
-                </p>
-              </div>
-              <div class="project-footer">
-                <span class="project-link muted">Coming Soon</span>
-              </div>
-            </article>
-
-          </div>
-        </div>
-        <div class="carousel-dots" id="carouselDots"></div>
-      </section>
-
-      <!-- Experience & Education — Horizontal Timeline -->
-      <section id="experience" class="section">
-        <div class="section-label scroll-anim">04 — Experience & Education</div>
-        <h2 class="section-heading scroll-anim">My Journey</h2>
-        <p class="timeline-note scroll-anim">← Most recent on the left</p>
-
-        <div class="htimeline-outer scroll-anim">
-          <div class="htimeline-scroll" id="htimelineScroll">
-            <div class="htimeline-track">
-              <div class="htimeline-item">
-                <div class="htimeline-card">
-                  <span class="htimeline-badge work">Research</span>
-                  <h3>Data Poisoning in ML — Research</h3>
-                  <span class="htimeline-date">Ongoing</span>
-                  <p>
-                    Early-stage research identifying and mitigating data
-                    poisoning attacks in ML systems. Completed literature review
-                    of attack strategies and defenses.
-                  </p>
-                </div>
-                <div class="htimeline-connector">
-                  <div class="htimeline-dot"></div>
-                </div>
-              </div>
-
-              <div class="htimeline-item">
-                <div class="htimeline-card">
-                  <span class="htimeline-badge work">Internship</span>
-                  <h3>Amazon Nova AI Red Teaming</h3>
-                  <span class="htimeline-date">Remote</span>
-                  <p>
-                    Led adversarial testing of Nova AI on AWS. Oversaw data
-                    labeling and quality review for the ML pipeline. Mentored
-                    newer team members.
-                  </p>
-                </div>
-                <div class="htimeline-connector">
-                  <div class="htimeline-dot"></div>
-                </div>
-              </div>
-
-              <div class="htimeline-item">
-                <div class="htimeline-card">
-                  <span class="htimeline-badge edu">Education</span>
-                  <h3>B.Sc Computer Science</h3>
-                  <span class="htimeline-date"
-                    >Effat University · Aug 2023 – Present</span
-                  >
-                  <p>
-                    3.99/4.00 CGPA. Dean's List 2023–24 and 2024–25. Engineering
-                    College Representative, Shura Council member, Foodies Club
-                    leader, Badminton team.
-                  </p>
-                </div>
-                <div class="htimeline-connector">
-                  <div class="htimeline-dot"></div>
-                </div>
-              </div>
-
-              <div class="htimeline-item">
-                <div class="htimeline-card">
-                  <span class="htimeline-badge edu">Education</span>
-                  <h3>O & A Levels — High School Diploma</h3>
-                  <span class="htimeline-date"
-                    >PISJ-ES, Jeddah · June 2022</span
-                  >
-                  <p>
-                    Completed with distinctions. Strong foundation in science,
-                    mathematics, and computer science. Prepared for STEM
-                    university studies.
-                  </p>
-                </div>
-                <div class="htimeline-connector">
-                  <div class="htimeline-dot"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Achievements -->
-      <section id="achievements" class="section">
-        <div class="section-label scroll-anim">05 — Achievements</div>
-        <h2 class="section-heading scroll-anim">Recognition</h2>
-        <div class="achievements-grid">
-          <div class="achievement-card scroll-anim">
-            <div class="ach-icon ach-orange">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="12" cy="8" r="6" />
-                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-              </svg>
-            </div>
-            <div class="ach-content">
-              <div class="ach-label">Dean's List Award</div>
-              <div class="ach-sub">2 Consecutive Years</div>
-              <p>
-                Recognized for academic excellence at Effat University,
-                maintaining a CGPA of 3.99/4.00 across two academic years
-                running.
-              </p>
-            </div>
-          </div>
-          <div
-            class="achievement-card scroll-anim"
-            style="transition-delay: 0.15s"
-          >
-            <div class="ach-icon ach-teal">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
-              </svg>
-            </div>
-            <div class="ach-content">
-              <div class="ach-label">Online Hackathons</div>
-              <div class="ach-sub">Active Participant</div>
-              <p>
-                Participated in multiple online hackathons, collaborating with
-                teams to build rapid prototypes and innovative solutions under
-                tight deadlines.
-              </p>
-            </div>
-          </div>
-          <div
-            class="achievement-card scroll-anim"
-            style="transition-delay: 0.3s"
-          >
-            <div class="ach-icon ach-green">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-              </svg>
-            </div>
-            <div class="ach-content">
-              <div class="ach-label">Student Leadership</div>
-              <div class="ach-sub">Multi-role Leader</div>
-              <p>
-                Serving simultaneously as Engineering College Representative,
-                Shura Council member, Foodies Club leader, and badminton team
-                member.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section">
-        <div class="contact-inner scroll-anim">
-          <div class="contact-tag">06 — Contact</div>
-          <h2 class="contact-heading">
-            Let's build something<br /><em>together.</em>
-          </h2>
-          <p class="contact-sub">
-            Open to internships, research collaborations, and interesting
-            projects. Feel free to reach out — I respond promptly.
-          </p>
-          <div class="contact-cta">
-            <a href="mailto:najeyah63@gmail.com" class="btn-primary">
-              Say Hello
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/najeyahwaseem05"
-              target="_blank"
-              class="btn-ghost"
-              >GitHub ↗</a
-            >
-          </div>
-          <div class="contact-email">najeyah63@gmail.com</div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <span class="nav-brand">NW<span class="dot">.</span></span>
-        <p>Designed & built by Najeyah Waseem · 2026</p>
-        <button class="footer-top" id="backToTop">Back to top ↑</button>
       </div>
-    </footer>
+      <div class="cv-body">
+        <h2>Najeyah Waseem</h2>
+        <p class="cv-role">Computer Science Student | Cybersecurity, AI &amp; Machine Learning, DevOps, Software Engineering</p>
+        <p class="cv-contact">Jeddah, Saudi Arabia · najeyah63@gmail.com · linkedin.com/in/najeyah-waseem-cs · najeyahwaseem05.github.io</p>
 
-    <!-- Research Modal -->
-    <div class="research-modal-overlay" id="researchModal" role="dialog" aria-modal="true" aria-labelledby="researchModalTitle">
-      <div class="research-modal-card">
-        <button class="research-modal-close" id="researchModalClose" aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
+        <h3>Summary</h3>
+        <p>Computer Science student at Effat University (GPA 3.99/4.00) with a strong foundation in programming, algorithm analysis and software development, and hands-on experience building cybersecurity and AI projects. Able to lead teams and manage multiple projects at once. Actively seeking a Computer Science internship.</p>
 
-        <!-- Animated beaker / lab scene -->
-        <div class="research-anim">
-          <div class="beaker">
-            <div class="beaker-neck"></div>
-            <div class="beaker-body">
-              <div class="liquid">
-                <div class="bubble b1"></div>
-                <div class="bubble b2"></div>
-                <div class="bubble b3"></div>
-              </div>
-              <div class="steam s1"></div>
-              <div class="steam s2"></div>
-              <div class="steam s3"></div>
-            </div>
-          </div>
-          <div class="orbit-ring">
-            <div class="orbit-dot od1"></div>
-            <div class="orbit-dot od2"></div>
-            <div class="orbit-dot od3"></div>
-          </div>
-          <div class="sparkle sp1">✦</div>
-          <div class="sparkle sp2">✦</div>
-          <div class="sparkle sp3">✦</div>
-        </div>
+        <h3>Education &amp; Honors</h3>
+        <div class="cv-row"><div class="cv-date">Jun 2027</div><div><h4>B.Sc. Computer Science, General Track (Cybersecurity + AI)</h4><div class=cv-sub>Effat University, Jeddah · GPA 3.99 / 4.00</div><ul><li>President’s List (2025/2026): GPA of 3.9 or higher across two consecutive semesters.</li><li>Dean’s List (2023–2025): GPA of 3.75 or higher across two consecutive semesters.</li><li>Coursework: Governance Risk and Compliance, Computer Networks, Ethical Hacking, Cryptography and Network Security, Digital Forensics, Machine Learning, Deep Learning, Software Engineering, Artificial Intelligence.</li></ul></div></div>
 
-        <div class="research-modal-badge">Work in Progress</div>
-        <h3 id="researchModalTitle" class="research-modal-title">Research is Underway!</h3>
-        <p class="research-modal-text">
-          The data poisoning research is actively being conducted — literature reviewed,
-          models being tested, and findings being compiled. Check back soon!
-        </p>
-        <div class="research-modal-tags">
-          <span class="research-tag">Machine Learning</span>
-          <span class="research-tag">Cybersecurity</span>
-          <span class="research-tag">Research</span>
-        </div>
+        <h3>Experience</h3>
+        <div class="cv-row"><div class="cv-date">July 2026 – Sept 2026</div><div><h4>DevOps Engineer Intern</h4><div class=cv-sub>ConfidencEway (Remote)</div><ul><li>Assisted with CI/CD pipelines, cloud infrastructure, automation, monitoring and troubleshooting to support reliable deployments and improve operational efficiency.</li></ul></div></div>
+        <div class="cv-row"><div class="cv-date">Jun – Jul 2026</div><div><h4>AI Red Teamer (Manager, Reviewer, Labeler)</h4><div class=cv-sub>AI Astrolabe (Remote)</div><ul><li>Labeled and reviewed dangerous Urdu prompts and responses to safety-test an AI language model.</li></ul></div></div>
+
+        <h3>Projects</h3>
+        <div class="cv-row"><div class="cv-date">Sept 2026 – Present</div><div><h4>Temporal Digital Twin for Incident Reconstruction in Hybrid-Cloud Banking</h4><div class=cv-sub>Senior capstone · Python, PostgreSQL, Neo4j, Docker, Wazuh</div><ul><li>Designing a temporal digital twin of a simulated hybrid-cloud banking environment that stores historical network, identity, permission and policy states and retrieves the environment as it existed at a chosen timestamp.</li><li>Developing an incident reconstruction and attack-path analysis approach that correlates security events with historical system states to rebuild multi-stage attack timelines and identify the paths an attacker could have used.</li></ul></div></div>
+        <div class="cv-row"><div class="cv-date">May 2026</div><div><h4>Web Application Penetration Testing</h4><div class=cv-sub>Kali Linux, Docker, WebSploit Labs, SQLMap</div><ul><li>Tested isolated vulnerable web apps for SQL injection and XSS, covering authentication bypass, database enumeration, and reflected and stored XSS, using manual and SQLMap-based methods.</li><li>Recommended remediation: prepared statements, output encoding and CSP.</li></ul></div></div>
+        <div class="cv-row"><div class="cv-date">May 2026</div><div><h4>Hospital Readmission Prediction</h4><div class=cv-sub>Python, XGBoost, SMOTE</div><ul><li>Built and compared six models on 71,515 patient encounters, using SMOTE and threshold tuning for class imbalance. Tuned XGBoost performed best (0.58 recall, 0.72 AUC-ROC).</li></ul></div></div>
+
+        <h3>Technical Skills</h3>
+        <dl class="cv-skills">
+          <dt>Security</dt><dd>Web application penetration testing, SQL injection, XSS, PCAP analysis, IDS tools, adversarial ML / data poisoning</dd>
+          <dt>AI &amp; Data</dt><dd>Machine learning, XGBoost, SMOTE, data preprocessing and analysis, Google Colab</dd>
+          <dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, IAM, CloudWatch), Docker, security groups, monitoring and alerting, GitHub Actions, CI/CD security</dd>
+          <dt>Networking &amp; Systems</dt><dd>TCP/IP, network segmentation, Wireshark, Kali Linux, VirtualBox</dd>
+          <dt>Languages</dt><dd>Python, Java, C++, JavaScript, PHP, HTML, MySQL, Assembly, Bash</dd>
+        </dl>
+
+        <h3>Certifications</h3>
+        <div class="cv-row"><div class="cv-date">2027</div><div><h4>CompTIA Security+</h4><div class=cv-sub>In progress, targeting January 2027</div></div></div>
+        <div class="cv-row"><div class="cv-date">2026</div><div><h4>Python for Data Science, AI &amp; Development</h4><div class=cv-sub>IBM</div></div></div>
+        <div class="cv-row"><div class="cv-date">2026</div><div><h4>Introduction to Generative AI</h4><div class=cv-sub>Google Cloud</div></div></div>
+        <div class="cv-row"><div class="cv-date">2025</div><div><h4>Digital Safety and Security</h4><div class=cv-sub>Arizona State University</div></div></div>
+
+        <h3>Leadership &amp; Activities</h3>
+        <div class="cv-row"><div class="cv-date">2026 – Present</div><div><h4>Student Government Vice President</h4><div class=cv-sub>Effat University</div><ul><li>Represent the student body in coordination with university administration, and help plan and run campus initiatives and events.</li></ul></div></div>
+        <div class="cv-row"><div class="cv-date">2025 – 2026</div><div><h4>Nominee, Student Shura Council President</h4><div class=cv-sub>Effat University</div><ul><li>Nominated for the Queen Effat Citizenship Award to serve as Student Shura President and student-body representative.</li></ul></div></div>
+        <div class="cv-row"><div class="cv-date">2024 – 2026</div><div><h4>College of Engineering Representative; Foodie’s Club Leader</h4><div class=cv-sub>Effat University</div><ul><li>Represented the college in Student Shura, presenting student concerns. Planned and executed events as club leader.</li></ul></div></div>
       </div>
     </div>
-
-    <script src="script.js"></script>
-  </body>
+  </div>
+</body>
 </html>
